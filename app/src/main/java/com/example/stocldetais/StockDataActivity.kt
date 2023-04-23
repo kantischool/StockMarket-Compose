@@ -28,12 +28,3 @@ class StockDataActivity : ComponentActivity() {
         }
     }
 }
-
-
-//@Preview(showBackground = true)
-//@Composable
-//fun GreetingPreview2() {
-//    StoclDetaisTheme {
-//     //   Greeting2("Android")
-//    }
-//}

@@ -19,7 +19,6 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Build
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -66,11 +65,12 @@ fun StockData() {
                 )
             }
         },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(Color.White))
+            colors = TopAppBarDefaults.centerAlignedTopAppBarColors(Color.White)
+        )
     })
     {
 
-        Column (modifier = Modifier.verticalScroll(rememberScrollState())){
+        Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
 
             StockInfo()
 
@@ -260,24 +260,28 @@ fun StockData() {
 
             Row(modifier = Modifier.padding(top = 10.dp, bottom = 10.dp)) {
 
-                Button(onClick = {}, modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 20.dp, end = 10.dp)
-                    .height(50.dp)
-                    .weight(1f),
+                Button(
+                    onClick = {}, modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 20.dp, end = 10.dp)
+                        .height(50.dp)
+                        .weight(1f),
                     shape = RoundedCornerShape(12.dp),
-                colors = ButtonDefaults.buttonColors(Color(0xFF009688))) {
+                    colors = ButtonDefaults.buttonColors(Color(0xFF009688))
+                ) {
 
                     Text(text = "Buy", color = Color.White)
                 }
 
-                Button(onClick = {}, modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(start = 10.dp, end = 20.dp)
-                    .height(50.dp)
-                    .weight(1f),
+                Button(
+                    onClick = {}, modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 10.dp, end = 20.dp)
+                        .height(50.dp)
+                        .weight(1f),
                     shape = RoundedCornerShape(12.dp),
-                    colors = ButtonDefaults.buttonColors(Color(0xFF042B27))) {
+                    colors = ButtonDefaults.buttonColors(Color(0xFF042B27))
+                ) {
 
                     Text(text = "Follow", color = Color.White)
                 }

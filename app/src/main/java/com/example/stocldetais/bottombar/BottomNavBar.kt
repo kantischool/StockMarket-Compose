@@ -8,20 +8,15 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
-import androidx.compose.material.Text
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.example.stocldetais.R
 
 @Composable
 fun BottomNavBar(navController: NavController) {
@@ -45,14 +40,23 @@ fun BottomNavBar(navController: NavController) {
         items.forEach { item ->
             BottomNavigationItem(
                 icon = {
-                    if (item.screen_route == "transaction"){
-                        Icon(painterResource(id = item.icon), contentDescription = item.title, modifier = Modifier.clip(
-                            CircleShape).background(Color(0xFF009688)).size(50.dp).padding(10.dp))
-                    }else{
+                    if (item.screen_route == "transaction") {
+                        Icon(
+                            painterResource(id = item.icon),
+                            contentDescription = item.title,
+                            modifier = Modifier
+                                .clip(
+                                    CircleShape
+                                )
+                                .background(Color(0xFF009688))
+                                .size(50.dp)
+                                .padding(10.dp)
+                        )
+                    } else {
                         Icon(painterResource(id = item.icon), contentDescription = item.title)
                     }
 
-                       },
+                },
                 selectedContentColor = Color.Black,
                 unselectedContentColor = Color.Black.copy(0.4f),
                 alwaysShowLabel = true,

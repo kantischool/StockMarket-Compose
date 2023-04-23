@@ -77,7 +77,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.stocldetais.R
 import com.example.stocldetais.StockDataActivity
-import com.patrykandpatrick.vico.core.entry.entryModelOf
 import kotlin.random.Random
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -93,13 +92,15 @@ fun HomeScreen() {
         }, navigationIcon = {
             IconButton(onClick = { /* doSomething() */ }) {
                 Icon(
-                    imageVector = Icons.Filled.Menu, contentDescription = "Localized description"
+                    imageVector = Icons.Filled.Menu,
+                    contentDescription = "Localized description"
                 )
             }
         }, actions = {
             IconButton(onClick = { /* doSomething() */ }) {
                 Icon(
-                    imageVector = Icons.Filled.Search, contentDescription = "Localized description"
+                    imageVector = Icons.Filled.Search,
+                    contentDescription = "Localized description"
                 )
             }
             IconButton(onClick = { /* doSomething() */ }) {
@@ -109,7 +110,8 @@ fun HomeScreen() {
                 )
             }
         },
-        colors = TopAppBarDefaults.largeTopAppBarColors(Color.White))
+            colors = TopAppBarDefaults.largeTopAppBarColors(Color.White)
+        )
     })
     {
         Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
@@ -311,7 +313,8 @@ fun CandleScreen() {
                 )
             }
         },
-        colors = TopAppBarDefaults.centerAlignedTopAppBarColors(Color.White))
+            colors = TopAppBarDefaults.centerAlignedTopAppBarColors(Color.White)
+        )
     })
     {
         val num = listOf<Int>(1, 2)
@@ -549,7 +552,7 @@ fun Graph(
     paddingSpace: Dp,
     verticalStep: Int,
     lineColor: Color,
-    showAxis :Boolean
+    showAxis: Boolean
 ) {
     val controlPoints1 = mutableListOf<PointF>()
     val controlPoints2 = mutableListOf<PointF>()
@@ -574,7 +577,7 @@ fun Graph(
         ) {
             val xAxisSpace = (size.width - paddingSpace.toPx()) / xValues.size
             val yAxisSpace = size.height / yValues.size
-            if (showAxis){
+            if (showAxis) {
                 /** placing x axis points */
                 for (i in xValues.indices) {
                     drawContext.canvas.nativeCanvas.drawText(
@@ -698,20 +701,6 @@ fun MarketCard1(cardColors: CardColors, priceColor: Color) {
                 color = Color(0xFF009688),
                 modifier = Modifier.padding(start = 15.dp, bottom = 5.dp)
             )
-
-            val chartEntryModel = entryModelOf(40f, 120f, 80f, 160f)
-//            Chart(
-//                modifier = Modifier
-//                    .height(15.dp)
-//                    .width(180.dp),
-//                chart = lineChart(),
-//                model = chartEntryModel,
-//                startAxis = startAxis(axis = LineComponent(R.color.black, 2f, )),
-//                bottomAxis = bottomAxis(),
-//            )
-//            CubicChart(modifier = Modifier
-//                .width(180.dp)
-//                .height(10.dp), graphColor = Color.DarkGray)
 
             val yStep = 50
             val random = Random

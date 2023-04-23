@@ -5,36 +5,24 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.BottomNavigation
-import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.Icon
-import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.stocldetais.bottombar.BottomNavBar
-import com.example.stocldetais.bottombar.BottomNavItem
 import com.example.stocldetais.bottombar.HomeScreen
 import com.example.stocldetais.bottombar.NavigationGraph
 import com.example.stocldetais.ui.theme.StoclDetaisTheme
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
-    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter",
+    @SuppressLint(
+        "UnusedMaterial3ScaffoldPaddingParameter",
         "UnusedMaterialScaffoldPaddingParameter"
     )
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     val navController = rememberNavController()
-                    Scaffold (bottomBar = { BottomNavBar(navController = navController) }){
+                    Scaffold(bottomBar = { BottomNavBar(navController = navController) }) {
                         NavigationGraph(navController = navController)
                     }
                 }
@@ -55,11 +43,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-
-
-
-
 
 
 @Composable
@@ -74,6 +57,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     StoclDetaisTheme {
-       HomeScreen()
+        HomeScreen()
     }
 }

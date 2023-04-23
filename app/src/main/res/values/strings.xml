@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">StoclDetais</string>
+    <string name="title_activity_stock_data">StockDataActivity</string>
+</resources>
